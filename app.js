@@ -191,3 +191,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+const inquiryForm = document.getElementById("inquiry-form");
+
+if (inquiryForm) {
+
+    inquiryForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        emailjs.send(
+            "service_qtx97ah",
+            "template_4rpl7ns",
+            {
+                from_name: document.getElementById("form-name").value,
+                reply_to: document.getElementById("form-email").value,
+                phone: document.getElementById("form-phone").value,
+                message: document.getElementById("form-message").value
+            }
+        )
+
+        .then(function() {
+
+            alert("✅ Inquiry sent successfully!");
+
+            inquiryForm.reset();
+
+        })
+
+        .catch(function(error) {
+
+            console.log(error);
+
+            alert("❌ Failed to send inquiry.");
+
+        });
+
+    });
+
+}
