@@ -200,7 +200,7 @@ if (inquiryForm) {
         e.preventDefault();
 
         emailjs.send(
-            "service_d3wrvfe",
+            "service_kolkpjn",
             "template_30hnf1k",
             {
                 from_name: document.getElementById("form-name").value,
