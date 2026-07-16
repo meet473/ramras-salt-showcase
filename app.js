@@ -201,7 +201,7 @@ if (inquiryForm) {
 
         emailjs.send(
             "service_kolkpjn",
-            "template_30hnf1k",
+            "template_jozvq04",
             {
                 from_name: document.getElementById("form-name").value,
                 reply_to: document.getElementById("form-email").value,
