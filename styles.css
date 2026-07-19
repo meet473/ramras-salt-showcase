@@ -571,6 +571,14 @@ header.sticky .logo img {
   transform: scale(1.05);
 }
 
+.sustainability-img.tall-img {
+  grid-row: span 3;
+}
+
+.sustainability-img.tall-img img {
+  height: 100%;
+}
+
 .sustainability-img.span-wide {
   grid-column: span 2;
 }
@@ -648,13 +656,13 @@ header.sticky .logo img {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 60px 8%;
+  padding: 60px 7%;
   gap: 50px;
 }
 
 .slide-img {
   flex: 1 1 350px;
-  height: 380px;
+  height: 450px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -664,12 +672,57 @@ header.sticky .logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide-img:hover img:not(.contain-img) {
+  transform: scale(1.05);
 }
 
 .slide-img img.contain-img {
   object-fit: contain;
   background-color: rgba(255, 255, 255, 0.03);
   padding: 15px;
+}
+
+.double-pouch-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.double-pouch-container img {
+  position: absolute;
+  height: 80% !important;
+  width: auto !important;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45));
+}
+
+.pouch-front-img {
+  z-index: 2;
+  transform: translateX(-40px) scale(1.02);
+}
+
+.pouch-back-img {
+  z-index: 1;
+  transform: translateX(45px) translateY(5px) scale(0.93) rotate(3deg);
+  opacity: 0.95;
+}
+
+.double-pouch-container:hover .pouch-front-img {
+  transform: translateX(-55px) translateY(-5px) scale(1.05);
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.55));
+}
+
+.double-pouch-container:hover .pouch-back-img {
+  transform: translateX(60px) translateY(0px) scale(0.97) rotate(6deg);
+  opacity: 1;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
 }
 
 .slide-info {
@@ -1100,7 +1153,7 @@ footer {
   .info-img-wrapper {
     order: 2;
   }
-  
+
   .sustainability-split {
     grid-template-columns: 1fr;
   }
@@ -1176,5 +1229,17 @@ footer {
   
   .footer-legal {
     justify-content: center;
+  }
+
+  .sustainability-images {
+    grid-template-columns: 1fr;
+  }
+
+  .sustainability-img.tall-img {
+    grid-row: auto;
+  }
+
+  .sustainability-img.tall-img img {
+    height: 350px;
   }
 }
