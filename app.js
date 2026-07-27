@@ -216,7 +216,7 @@ if (inquiryForm) {
 
             inquiryForm.reset();
 
-        })
+        }) 
 
         .catch(function(error) {
 
